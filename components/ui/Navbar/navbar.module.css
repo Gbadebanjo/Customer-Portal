@@ -1,0 +1,208 @@
+.sidebarMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    /*height:1600px;*/
+    /*height: 100%; !* Adjust height as needed *!*/
+    min-height: fit-content; /* Automatically adjusts height to contain content */
+    height: 100%; /* Allows the container to expand vertically */
+}
+
+.menuItem {
+    color: #e1e7ed;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menuItemOrange {
+    color: #ff7d70;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.subMenu {
+    /*margin-left: 20px; !* Indent child menu items *!*/
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    align-items: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.subMenuOrange {
+    /*margin-left: 20px; !* Indent child menu items *!*/
+    color: #ff7d70;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    alignItems: center;
+    padding: 10px 20px;
+    margin-top: 0;
+}
+
+.subMenuOrangeIdentity {
+    /*margin-left: 20px; !* Indent child menu items *!*/
+    color: #ff7d70;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    alignItems: center;
+    padding: 0 10px 20px;
+    margin-top: 0;
+}
+
+.subMenuItem {
+    color: #e1e7ed;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    alignItems: center;
+    padding: 10px 20px;
+}
+
+.subMenuItemIdentity {
+    color: #e1e7ed;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    lineHeight: 23px;
+    wordWrap: break-word;
+    display: flex;
+    alignItems: center;
+    padding: 0 10px 20px;
+}
+
+.subSubMenuItem {
+    color: #e1e7ed;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.subSubMenuItemOrange {
+    color: #ff7d70;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.dayStarLogoForMenu {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    margin-bottom: 35px;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+/* Assuming DashboardIcon is a SVG wrapped inside a span */
+.menuItem span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.menuItem span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+.menuItemOrange span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+.menuItemOrange span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.subMenuItem span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.subMenuOrange span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.subMenuOrangeIdentity span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.subMenuItemIdentity span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.subMenuItem span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+.subMenuItemOrange span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+.subMenuOrangeIdentity span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+.subMenuItemIdentity span:nth-child(3) {
+    margin-left: 100px; /* Adjust margin for spacing */
+}
+
+/* Additional styles for inner menu */
+.innerMenu {
+    margin-left: 20px; /* Indent inner menu items */
+    list-style-type: none; /* Remove default list styles */
+}
+
+.innerMenuItem {
+    /* Additional styles for inner menu items */
+}
+
+/* Adjust margins for spacing */
+.subMenuItem span:first-child {
+    margin-right: 10px;
+}
+
+.subMenuItemOrange span:first-child {
+    margin-right: 10px;
+}
+
+.subMenuItem span:nth-child(3) {
+    margin-left: 100px;
+}
+
+.sidebarHeader {
+    color: white;
+    fontSize: 12px;
+    fontFamily: 'Kanit';
+    fontWeight: 500;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}

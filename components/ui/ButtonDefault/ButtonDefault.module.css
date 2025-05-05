@@ -1,0 +1,36 @@
+.btn {
+    width: 482px;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #FF7D70;
+    border-radius: 5px;
+    border: 1px #FF7D70 solid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex; /* Changed inline-flex to flex */
+}
+
+.btn:hover {
+    background-color: #f26a6d;
+    border: 1px #f26a6d solid;
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: center; /* Added this line */
+    text-align: center;
+    color: white;
+    width: 100%; /* Changed from 440px to 100% */
+    padding-top: 14px;
+    padding-bottom: 12px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}

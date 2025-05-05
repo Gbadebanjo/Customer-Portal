@@ -1,0 +1,14 @@
+.btnDiv{
+    color: #f26a6d;
+    width: 80px;
+    height: 50px;
+    paddingTop: 16px;
+    paddingBottom: 16px;
+    paddingLeft: 14px;
+    paddingRight: 12px;
+    borderRadius: 15px;
+    fontSize: 16;
+    fontFamily: "sans-serif";
+    fontWeight: "600";
+    textAlign: "center";
+}

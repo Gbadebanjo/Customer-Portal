@@ -1,0 +1,58 @@
+.mainContent td {
+    border-top: 0.5px solid rgba(173, 216, 230, 0.3); /* Use a thinner and dimmer color */
+    border-bottom: 0.5px solid rgba(173, 216, 230, 0.3); /* Use a thinner and dimmer color */
+    padding: 8px; /* Add padding for better spacing */
+}
+
+.mainContent {
+    /*max-height: calc(100vh - 250px); !* Adjusted max-height *!*/
+    overflow-y: auto; /* Added overflow-y for vertical scrolling */
+    min-height: 380px; /* Automatically adjusts height to 380px */
+    height: fit-content; /* Allows the container to expand vertically */
+}
+
+
+.searchArea {
+    display: flex;
+    border-radius: 14px;
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Align items vertically */
+    padding: 20px 20px; /* Add padding for spacing */
+}
+
+.searchTextInput {
+    width: 700px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.searchButton {
+    width: 48px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.filterText {
+    display: flex;
+    color: #FF7D70;
+    padding: 0 20px;
+}
+
+.inputText {
+    width: 700px;
+    height: 50px;
+    background: #123751;
+    border-radius: 5px;
+    border: 1px #123751 solid;
+    opacity: 0.60;
+    color: #E1E7ED;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding-left: 10px;
+}

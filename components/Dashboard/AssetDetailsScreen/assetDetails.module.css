@@ -1,0 +1,375 @@
+.container {
+    background: #0D202F;
+    height: 100%;
+    color: #E1E7ED;
+    font-size: 15px; /* Changed from fontSize to font-size */
+    fontFamily: 'Kanit';
+    fontWeight: 300; /* Changed from fontWeight to font-weight */
+    lineHeight: 23px;
+    word-wrap: break-word; /* Changed from wordWrap to word-wrap */
+    display: grid;
+    grid-template-areas:
+        'nav header rightSide'
+        'nav content rightSide'
+        'nav content rightSide';
+    grid-template-columns: 5fr 15fr 1fr;
+    grid-template-rows: 40px 100px 1fr;
+    overflow-y: auto; /* Added overflow-y for vertical scrolling */
+}
+
+/* Individual components styling */
+.nav {
+    padding: 20px;
+    grid-area: nav;
+    background: #0D2638;
+    height: 100%;
+}
+
+.header {
+    grid-area: header;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* Styles for HomeIcon */
+/* Assuming HomeIcon is a SVG wrapped inside a span */
+.header span:first-child {
+    margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.content {
+    grid-area: content;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: #0D202F;
+    opacity: 0.95; /* Set opacity to 50% */
+    height: 100%;
+}
+
+.mainContent {
+    overflow-y: auto; /* Added overflow-y for vertical scrolling */
+    /*min-height: 380px; !* Automatically adjusts height to 380px *!*/
+    height: 100%; /* Allows the container to expand vertically */
+}
+
+.rightSide {
+    grid-area: rightSide;
+    background: #0D2638;
+    min-height: fit-content; /* Automatically adjusts height to contain content */
+    height: 100vh; /* Allows the container to expand vertically */
+    overflow-y: scroll;
+}
+
+.profileIconDiv {
+    margin: 40px 20px 10px;
+}
+
+.profileUserDiv {
+    margin: 10px 10px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    min-height: fit-content; /* Automatically adjusts height to contain content */
+    height: 100vh; /* Allows the container to expand vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.sidebarHeader {
+    color: white;
+    font-size: 24px;
+    font-family: 'Kanit';
+    font-weight: 500;
+    margin-bottom: 50px; /* Added margin-bottom for spacing */
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid var(--lpx-border-color);
+    font-size: .725rem;
+    color: gray;
+    width: 100%;
+    text-align: center;
+    padding: 0; /* Adjust padding as needed */
+}
+
+.filterText {
+    display: flex;
+    color: #FF7D70;
+    padding: 0 20px;
+}
+
+.mainContent td {
+    border-top: 0.5px solid rgba(173, 216, 230, 0.3); /* Use a thinner and dimmer color */
+    border-bottom: 0.5px solid rgba(173, 216, 230, 0.3); /* Use a thinner and dimmer color */
+    padding: 8px; /* Add padding for better spacing */
+    height: fit-content;
+}
+
+.centerContent {
+    margin: 5px 20px 15px 20px;
+    height: 100%;
+    border-radius: 14px;
+    gap: 20px;
+    background-color: #0D202F;
+    z-index: 1; /* Ensure it's above the layer mask */
+    padding: 10px;
+    display: grid;
+    grid-template-areas:
+        'electricity solar co2 trees'
+        'power lastUp energy lastUp2'
+        'totalPower totalPower totalEnergy totalEnergy';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 3fr;
+}
+
+.topRow {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Align items vertically */
+    padding-right: 20px; /* Add padding for spacing */
+    margin: 10px 10px 0 30px;
+}
+
+.electricity {
+    grid-area: electricity;
+    background-color: #10324a;
+}
+.solar {
+    grid-area: solar;
+    background-color: #10324a;
+}
+.co2 {
+    grid-area: co2;
+    background-color: #10324a;
+}
+.trees {
+    grid-area: trees;
+    background-color: #10324a;
+}
+
+.power {
+    grid-area: power;
+    margin-top: 25px;
+}
+.lastUp {
+    margin-top: 25px;
+    grid-area: lastUp;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.energy {
+    margin-top: 25px;
+    grid-area: energy;
+}
+.lastUp2 {
+    margin-top: 25px;
+    grid-area: lastUp2;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.totalPower {
+    grid-area: totalPower;
+    background-color: #10324a;
+}
+.totalPower2 {
+    grid-area: totalPower2;
+    margin: 0 10px;
+    background-color: #10324a;
+}
+.totalEnergy {
+    grid-area: totalEnergy;
+    background-color: #10324a;
+}
+.totalEnergy2 {
+    grid-area: totalEnergy2;
+    margin: 0 10px;
+    background-color: #10324a;
+}
+
+
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px; /* Reduced height */
+}
+
+.iconChartWrapper {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Reduced height */
+}
+
+.circle {
+    position: absolute;
+    width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.icon {
+    position: relative;
+    z-index: 1;
+}
+
+
+.card {
+    border-radius: 14px;
+    padding: 15px;
+    z-index: 1;
+    background: rgba(59, 68, 75, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.navCard {
+    border-radius: 14px;
+    padding: 15px;
+    z-index: 1;
+    background: rgba(59, 68, 75, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the card takes up the full height of its grid cell */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.totalPowerHeader{
+    margin: 20px 20px;
+    position: relative; /* Added to make it the reference for absolutely positioned child elements */
+}
+
+.topDivContainer{
+    position: absolute; /* Positions it relative to .box */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Ensures it is on top of .box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topDiv, .bottomDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.blueBox {
+    background-color: #354657;
+    width: 120px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.hiddenBox {
+    visibility: hidden;
+}
+
+.box{
+    position: relative; /* Required for layering within the container */
+    width: 420px;
+    height: 300px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: #FF7D70;
+    overflow: hidden;
+    border-radius: 16px;
+    z-index: 0; /* Lower z-index than .topDivContainer */
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 140%;
+    background-color: #00C9FF;
+    box-shadow: 0 0 20px rgb(8, 8, 8);
+    border-radius: 16px;
+    animation: animate 4s linear infinite;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 10px;
+    background-color: #10324a;
+    border-radius: 16px;
+}
+
+.blueTitle{
+    color: #4B7A9C;
+    font-size: 1.25rem;
+}
+
+.belowLeftParent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.flexRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progressBars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.progressBar {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

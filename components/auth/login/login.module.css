@@ -1,0 +1,220 @@
+.loginPage {
+    height: 100%;
+    background: #0D202F;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.leftPart {
+    background: url('/img/daystar/bg1.png') center/cover;
+    height: 100vh;
+    width: 50%;
+}
+
+.rightPart {
+    width: 50%;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.rightPartForm {
+    width: 472px;
+    margin: 80px 80px 20px;
+    height: 548px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dayStarLogo {
+    display: flex;
+    padding-left: 17.5px;
+    width: 300px;
+    height: 97.43px;
+    background: url('/img/daystar/daystar.png') center/cover;
+}
+
+.loginTextContainer {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    display: inline-flex;
+}
+
+.loginText {
+    color: white;
+    font-size: 28px;
+    /*font-family: Kanit;*/
+    font-family: sans-serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    /*margin-right: 25px;*/
+}
+
+.instructionText {
+    align-self: stretch;
+    color: #E1E7ED;
+    font-size: 16px;
+    /*font-family: Kanit;*/
+    font-family: sans-serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+.forgotPasswprd {
+    width: 100%;
+    text-align: right;
+    color: #E1E7ED;
+    font-size: 16px;
+    /*font-family: Kanit;*/
+    font-family: sans-serif;
+    font-weight: 300;
+    word-wrap: break-word;
+    margin-top: 30px;
+}
+
+.copyright {
+    color: #E1E7ED;
+    font-size: 13px;
+    /*font-family: Kanit;*/
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-top: 100px;
+    word-wrap: break-word;
+}
+
+.inputText {
+    width: 482px;
+    height: 50px;
+    background: #123751;
+    border-radius: 5px;
+    border: 1px #123751 solid;
+    opacity: 0.60;
+    color: #E1E7ED;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding-left: 15px;
+}
+
+.top1 {
+    width: 100%;
+    height: 20%;
+    padding-bottom: 0.02px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.top2 {
+    width: 482px;
+    height: 50px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+
+.top3 {
+    width: 482px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.top4 {
+    width: 100%;
+    height: 10%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    display: inline-flex;
+}
+
+.top5 {
+    width: 482px;
+    height: 48.02px;
+    padding-bottom: 0.02px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.top6 {
+    width: 482px;
+    height: 50px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+
+.top7 {
+    width: 482px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.togglePasswordButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #E1E7ED;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.forgotPassword {
+    width: 100%;
+    text-align: right;
+    color: white; /* Change font color to white */
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 300;
+    word-wrap: break-word;
+    margin-top: 15px; /* Maintain the same margin top as the input texts */
+    align-self: flex-end; /* Align to the right */
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.popUpHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    background: #0D202F;
+    .flexContainer {
+        flex-direction: column;
+    }
+
+    .leftPart {
+        width: 100%;
+        visibility: hidden;
+    }
+
+    .rightPart {
+        width: 100%;
+    }
+}

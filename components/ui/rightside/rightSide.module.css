@@ -1,0 +1,15 @@
+
+.rightSide {
+    grid-area: rightSide;
+    background: #0D2638;
+    min-height: fit-content; /* Automatically adjusts height to contain content */
+    height: auto; /* Allows the container to expand vertically */
+}
+
+.profileIconDiv {
+    margin: 40px 20px 10px;
+}
+
+.profileUserDiv {
+    margin: 10px 10px;
+}

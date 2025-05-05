@@ -1,0 +1,230 @@
+.gridContainer {
+    height: 100vh;
+    color: #E1E7ED;
+    fontSize: 15px;
+    fontFamily: 'Kanit';
+    fontWeight: 300;
+    line-height: 23px;
+    word-wrap: break-word;
+    display: grid;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    grid-template-areas:
+        'topLeft topCenter1 topCenter1 topRight'
+        'solar co2 trees rightSide'
+        'powerGen  lastUpdated lastUpdated rightSide'
+        'donut donut donut rightSide';
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 0.6fr 4fr 0.6fr 9.8fr; /* Adjusted rows to allocate more height to the donut section */
+    gap: 20px;
+    background-size: cover;
+}
+
+.card {
+    border-radius: 14px;
+    padding: 15px;
+    z-index: 1;
+    background: rgba(59, 68, 75, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the card takes up the full height of its grid cell */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px; /* Reduced height */
+}
+
+.circle {
+    position: absolute;
+    width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.icon {
+    position: relative;
+    z-index: 1;
+}
+
+.topLeft {
+    grid-area: topLeft;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 25px;
+}
+
+.topCenter1 {
+    grid-area: topCenter1;
+    grid-column: span 2;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
+.topRight {
+    grid-area: topRight;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
+.rightSide {
+    grid-area: rightSide;
+    min-height: fit-content;
+    height: 100vh;
+    background: rgba(59, 68, 75, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+}
+
+.solar, .co2, .trees {
+    background: rgba(59, 68, 75, 0.85);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.powerGen {
+    grid-area: powerGen;
+    background: none;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.lastUpdated {
+    grid-area: lastUpdated;
+    display: flex;
+    background: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.donut {
+    grid-area: donut;
+    background: rgba(59, 68, 75, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.donutContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donutHeader {
+    font-weight: bold;
+    text-align: left;
+    justify-self: left;
+    align-self: flex-start;
+}
+.donutHeaderTwo {
+    font-weight: bold;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.donutFigure {
+    flex: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.donutFooter {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.powerSource {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9em;
+}
+.powerSourceTop {
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: flex-start;  /* Distribute items evenly with space between them */
+    width: 100%;  /* Ensure the flex container takes up the full width */
+}
+
+
+.powerSource span {
+    margin-top: 5px;
+}
+
+.copyright {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid var(--lpx-border-color);
+    font-size: .725rem;
+    color: gray;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.figure {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.rightContainer{
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.whiteTitle{
+    color: #fff;
+    font-size: 1.25rem;
+}

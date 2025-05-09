@@ -74,13 +74,13 @@ function LoginScreen() {
                 <div className={classes.leftPart}></div>
                 <div className={classes.rightPart}>
                     <div className={classes.rightContainer} >
-                    {/* <form action={login} ref={loginRef} > */}
                         <div className={classes.rightPartForm}>
                             <div className={classes.dayStarLogo}></div>
                             <div className={classes.loginTextContainer}>
                                 <div className={classes.loginText}>Login</div>
                                 <div className={classes.instructionText}>Enter your e-mail address and password</div>
                             </div>
+                    {/* <form action={login} ref={loginRef} > */}
                             <div className={classes.top1}>
                                 <div className={classes.top2}>
                                     <div className={classes.top3}>
@@ -147,6 +147,7 @@ function LoginScreen() {
                                 type="submit"
                                 onClick={handlePreLogin}
                             />
+                    {/* </form> */}
                             <div className={classes.forgotPassword}>
                                 <Link href={'/forgot-password'}>Forgot Password?</Link>
                             </div>
@@ -154,7 +155,6 @@ function LoginScreen() {
                                 {thisYear} © Daystar Power Solutions
                             </div>
                         </div>
-                    {/* </form> */}
                     </div>
                 </div>
             </div>

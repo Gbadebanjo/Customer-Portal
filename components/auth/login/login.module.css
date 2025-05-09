@@ -15,26 +15,36 @@
 
 .rightPart {
     width: 50%;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    height: 100vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-.rightPartForm {
-    width: 472px;
-    margin: 80px 80px 20px;
-    height: 548px;
+.rightContainer {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.dayStarLogo {
+.rightPartForm {
+    width: 70%;
+    /* margin: 80px 80px 20px; */
+    height: 70%;
     display: flex;
-    padding-left: 17.5px;
-    width: 300px;
-    height: 97.43px;
-    background: url('/img/daystar/daystar.png') center/cover;
+    flex-direction: column;
+    /* margin: auto; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: #123751; */
+} 
+
+.dayStarLogo {    
+    width: 60%;
+    height: 20%;
+     background: url('/img/daystar/daystar.png') center/cover;
 }
 
 .loginTextContainer {
@@ -49,11 +59,11 @@
 .loginText {
     color: white;
     font-size: 28px;
-    /*font-family: Kanit;*/
+    /* font-family: Kanit; */
     font-family: sans-serif;
     font-weight: 500;
     word-wrap: break-word;
-    /*margin-right: 25px;*/
+    /* margin-right: 25px; */
 }
 
 .instructionText {
@@ -203,18 +213,13 @@
     justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-    background: #0D202F;
-    .flexContainer {
-        flex-direction: column;
-    }
-
-    .leftPart {
-        width: 100%;
-        visibility: hidden;
+@media (max-width: 768px) {  
+  .leftPart {
+        display: none;
     }
 
     .rightPart {
         width: 100%;
+        height: 100vh;
     }
 }

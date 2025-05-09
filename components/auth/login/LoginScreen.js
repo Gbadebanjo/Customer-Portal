@@ -73,8 +73,9 @@ function LoginScreen() {
             <div className={classes.flexContainer}>
                 <div className={classes.leftPart}></div>
                 <div className={classes.rightPart}>
-                    <form action={login} ref={loginRef}>
-                        <div className={classes.rightPartForm} style={{ margin: '20px 20px 0 20px' }}>
+                    <div className={classes.rightContainer} >
+                    {/* <form action={login} ref={loginRef} > */}
+                        <div className={classes.rightPartForm}>
                             <div className={classes.dayStarLogo}></div>
                             <div className={classes.loginTextContainer}>
                                 <div className={classes.loginText}>Login</div>
@@ -153,7 +154,8 @@ function LoginScreen() {
                                 {thisYear} © Daystar Power Solutions
                             </div>
                         </div>
-                    </form>
+                    {/* </form> */}
+                    </div>
                 </div>
             </div>
             <dialog

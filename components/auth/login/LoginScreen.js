@@ -12,6 +12,8 @@ import WarnCircleBigIcon from "@/components/ui/icons/WarnCircleBigIcon";
 import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
 import ButtonFlexible from "@/components/ui/button-flexible/ButtonFlexible";
 import { ButtonDefault } from "@/components/ui/ButtonDefault/ButtonDefault";
+import { TextField, InputAdornment, IconButton } from '@mui/material';
+// import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 function LoginScreen() {
     const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
@@ -81,7 +83,7 @@ function LoginScreen() {
                                 <div className={classes.instructionText}>Enter your e-mail address and password</div>
                             </div>
                     {/* <form action={login} ref={loginRef} > */}
-                            <div className={classes.top1}>
+                            {/* <div className={classes.top1}>
                                 <div className={classes.top2}>
                                     <div className={classes.top3}>
                                         <div
@@ -108,8 +110,8 @@ function LoginScreen() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={classes.top4}>
+                            </div> */}
+                            {/* <div className={classes.top4}>
                                 <div className={classes.top5}>
                                     <div className={classes.top6}>
                                         <div className={classes.top7} style={{ position: 'relative' }}>
@@ -138,7 +140,61 @@ function LoginScreen() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+
+   <TextField
+  fullWidth
+  label="Email Address"
+  variant="filled"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  margin="dense"
+  sx={{
+    input: {
+      backgroundColor: '#123751',
+      color: '#E1E7ED',
+    },
+    label: {
+      color: '#E1E7ED',
+        '&.Mui-focused': {
+            color: '#ff7d70',
+        },
+    },
+    '& .MuiFilledInput-root': {
+      backgroundColor: '#ff7d70',
+      color: '#000',
+    },
+    '& .MuiFilledInput-underline:before': {
+      borderBottomColor: '#123751', // default underline
+    },
+    '& .MuiFilledInput-underline:hover:before': {
+      borderBottomColor: '#123751', // hover
+    },
+    '& .MuiFilledInput-underline:after': {
+      borderBottomColor: '#ff7d70', // focused
+    },
+  }}
+/>
+
+
+                            <div className="form-control w-full max-w-xs">
+  <label className="label">
+    <span className="label-text">Name</span>
+  </label>
+  <input type="text" placeholder="Type your name" className="input input-bordered w-full max-w-xs" />
+</div>
+                                <div className={classes.inputContainer}>
+                                            <input
+                                                type="email"
+                                                className={classes.inputText}
+                                                placeholder="Email address"
+                                                max={256}
+                                                name="email"
+                                                id="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                        </div>
                             <ButtonDefault
                                 width={482}
                                 height={54}
@@ -158,6 +214,7 @@ function LoginScreen() {
                     </div>
                 </div>
             </div>
+            
             <dialog
                 id="custom_modal"
                 className="modal"

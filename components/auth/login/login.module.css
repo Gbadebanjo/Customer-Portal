@@ -63,6 +63,16 @@
     word-wrap: break-word;
 }
 
+.inputContainer {
+    width: 100%;
+    /* height: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 16px;
+    display: inline-flex;
+}
+
 .instructionText {
     align-self: stretch;
     color: #E1E7ED;
@@ -96,7 +106,7 @@
 }
 
 .inputText {
-    width: 70%;
+    width: 100%;
     height: 60px;
     background: #123751;
     border-radius: 5px;
@@ -109,6 +119,7 @@
     word-wrap: break-word;
     padding-left: 15px;
 }
+
 
 /* .top1 {
     width: 100%;

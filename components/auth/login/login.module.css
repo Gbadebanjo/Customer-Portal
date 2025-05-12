@@ -81,7 +81,7 @@
     word-wrap: break-word;
 }
 
-.forgotPasswprd {
+.forgotPassword {
     width: 100%;
     text-align: right;
     color: #E1E7ED;
@@ -91,6 +91,12 @@
     font-weight: 300;
     word-wrap: break-word;
     margin-top: 30px;
+}
+
+.forgotPassword:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #E1E7ED;
 }
 
 .copyright {

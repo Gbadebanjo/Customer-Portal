@@ -1,4 +1,4 @@
-import classes from './forgotPassword.module.css'
+import classes from '../login/login.module.css';
 import Button from "@/components/ui/button/Button";
 import ButtonWhite from "@/components/ui/button-white/Button";
 
@@ -8,10 +8,10 @@ function ForgotPasswordComponent() {
     return (
         <div className={classes.loginPage}>
             <div className={classes.flexContainer}>
-                <div className={classes.leftPart}/>
+                <div className={classes.leftPart} />
                 <div className={classes.rightPart}>
                     <div className={classes.rightPartForm}>
-                        <div className={classes.dayStarLogo}/>
+                        <div className={classes.dayStarLogo} />
                         <div className={classes.loginTextContainer}>
                             <div className={classes.loginText}>
                                 Forgot Password?
@@ -67,7 +67,7 @@ function ForgotPasswordComponent() {
                                             fontWeight: '600',
                                             letterSpacing: 0.50,
                                             wordWrap: 'break-word',
-                                    }}
+                                        }}
                                     >
                                         Back
                                     </div>

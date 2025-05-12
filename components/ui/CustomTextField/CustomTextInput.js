@@ -9,7 +9,7 @@ export default function CustomTextField({
   value,
   onChange,
   isPassword = false,
-  ...rest
+  name
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -23,13 +23,20 @@ export default function CustomTextField({
       variant="filled"
       type={isPassword && !showPassword ? 'password' : 'text'}
       label={label}
+      name={name}
       value={value}
       onChange={onChange}
       margin="dense"
       InputProps={{
         endAdornment: isPassword && (
           <InputAdornment position="end">
-            <IconButton onClick={handleTogglePassword} edge="start">
+            <IconButton onClick={handleTogglePassword} edge="start" sx={{
+              color: '#fff',
+              '&:hover': {
+                backgroundColor: '#123751',
+                color: '#fff',
+              },
+            }}>
               {showPassword ? <EyeIcon /> : <EyeSlashIcon />}
             </IconButton>
           </InputAdornment>
@@ -40,11 +47,14 @@ export default function CustomTextField({
           backgroundColor: '#123751',
           color: '#E1E7ED',
           borderRadius: '10px',
-          height: '30px',
+          height: '34px',
           fontSize: '20px',
-        //   textAlign: 'center',
+          '&::placeholder': {
+            color: '#E1E7ED',
+          },
         },
         label: {
+          fontSize: '20px',
           color: '#E1E7ED',
           '&.Mui-focused': {
             color: '#ff7d70',
@@ -52,8 +62,10 @@ export default function CustomTextField({
         },
         '& .MuiFilledInput-root': {
           backgroundColor: '#123751',
-          color: '#123751',
           borderRadius: '10px',
+          '&:hover': {
+            backgroundColor: '#123751',
+          },
         },
       }}
     />

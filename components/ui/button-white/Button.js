@@ -2,12 +2,7 @@ import Link from "next/link";
 import classes from './button.module.css'
 
 function ButtonWhite(props) {
-    const {link, width, height, children, onClick} = props;
-
-    const buttonStyles = {
-        width: `${width}px`,
-        height: `${height}px`,
-    }
+    const {link, children, onClick} = props;
 
     return <Link
         href={link}
@@ -15,7 +10,6 @@ function ButtonWhite(props) {
     >
         <div
             className={classes.btn}
-            style={buttonStyles}
             onClick={onClick}
         >
             <div className={classes.btnText}>{children}</div>

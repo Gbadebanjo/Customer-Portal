@@ -1,149 +1,149 @@
 .loginPage {
-    height: 100%;
-    background: #0D202F;
+  height: 100%;
+  background: #0d202f;
 }
 
 .flexContainer {
-    display: flex;
+  display: flex;
 }
 
 .leftPart {
-    background: url('/img/daystar/bg1.png') center/cover;
-    height: 100vh;
-    width: 50%;
+  background: url("/img/daystar/bg1.png") center/cover;
+  height: 100vh;
+  width: 50%;
 }
 
 .rightPart {
-    width: 50%;
-    height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rightContainer {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rightPartForm {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} 
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-.dayStarLogo {    
-    width: 55%;
-    height: 20%;
-     background: url('/img/daystar/daystar.png') center no-repeat; ;
-    background-size: contain;
-    /* background-color: aliceblue; */
+.dayStarLogo {
+  width: 55%;
+  height: 20%;
+  background: url("/img/daystar/daystar.png") center no-repeat;
+  background-size: contain;
+  /* background-color: aliceblue; */
 }
 
 .loginTextContainer {
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 16px;
-    display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
 }
 
 .loginText {
-    color: white;
-    font-size: 38px;
-    /* font-family: Kanit; */
-    font-family: sans-serif;
-    font-weight: 700;
-    word-wrap: break-word;
+  color: white;
+  font-size: 38px;
+  /* font-family: Kanit; */
+  font-family: sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
 }
 
 .loginForm {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
 }
 
 .instructionText {
-    align-self: stretch;
-    color: #E1E7ED;
-    font-size: 1.4rem;
-    /*font-family: Kanit;*/
-    font-family: sans-serif;
-    font-weight: 500;
-    margin-bottom: 10px;
-    word-wrap: break-word;
+  align-self: stretch;
+  color: #e1e7ed;
+  font-size: 1.3rem;
+  /*font-family: Kanit;*/
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .forgotPassword {
-    width: 100%;
-    text-align: right;
-    color: #E1E7ED;
-    font-size: 16px;
-    /*font-family: Kanit;*/
-    font-family: sans-serif;
-    font-weight: 300;
-    word-wrap: break-word;
-    margin-top: 30px;
+  width: 100%;
+  text-align: right;
+  color: #e1e7ed;
+  font-size: 16px;
+  /*font-family: Kanit;*/
+  font-family: sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  margin-top: 30px;
 }
 
 .forgotPassword:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: #E1E7ED;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #e1e7ed;
 }
 
 .copyright {
-    color: #E1E7ED;
-    font-size: 13px;
-    /*font-family: Kanit;*/
-    font-family: sans-serif;
-    font-weight: 400;
-    margin-top: 100px;
-    word-wrap: break-word;
+  color: #e1e7ed;
+  font-size: 13px;
+  /*font-family: Kanit;*/
+  font-family: sans-serif;
+  font-weight: 400;
+  margin-top: 100px;
+  word-wrap: break-word;
 }
 
-
 .forgotPassword {
-    width: 100%;
-    text-align: right;
-    color: white; /* Change font color to white */
-    font-size: 16px;
-    font-family: sans-serif;
-    font-weight: 300;
-    word-wrap: break-word;
-    margin-top: 15px; /* Maintain the same margin top as the input texts */
-    align-self: flex-end; /* Align to the right */
+  width: 100%;
+  text-align: right;
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  margin-top: 15px;
+  align-self: flex-end;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.popUpHeader{
-    display: flex;
-    justify-content: space-between;
+.popUpHeader {
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
   .leftPart {
-        display: none;
-    }
+    display: none;
+  }
 
-    .rightPart {
-        width: 100%;
-        height: 100vh;
-    }
+  .rightPart {
+    width: 100%;
+    height: 100vh;
+  }
 
-    .rightPartForm {
-        width: 90%;
-    } 
+  .rightPartForm {
+    width: 90%;
+  }
 }

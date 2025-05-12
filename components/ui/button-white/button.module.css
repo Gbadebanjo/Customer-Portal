@@ -1,9 +1,5 @@
 .btn {
-    height: 54px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    height: 58px;
     background: #fff;
     border-radius: 5px;
     border: 1px #fff solid;
@@ -11,23 +7,18 @@
     align-items: center;
     gap: 10px;
     display: inline-flex;
+    width: 100%;
+    color: #FF7D70;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.30px;
+    word-wrap: break-word;
 }
 
 .btn:hover {
     background-color: #FF7D70;
     border: 1px #FF7D70;
+    color: #fff;
 }
 
-.btnText {
-    color: #FF7D70; /* Default text color */
-    font-size: 20px;
-    font-family: sans-serif;
-    font-weight: 900;
-    letter-spacing: 0.50px;
-    word-wrap: break-word;
-}
-
-.btn:hover .btnText:hover {
-    color: #FFF; /* Change text color on hover */
-    background: #FF7D70; /* Change text color on hover */
-}

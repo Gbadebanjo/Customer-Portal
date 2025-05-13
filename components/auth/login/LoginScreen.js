@@ -8,18 +8,15 @@ import WarnCircleBigIcon from "@/components/ui/icons/WarnCircleBigIcon";
 import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
 import { ButtonDefault } from "@/components/ui/ButtonDefault/ButtonDefault";
 import CustomTextField from '@/components/ui/CustomTextField/CustomTextInput';
+import CopyRight from '@/components/ui/CopyRight/copyright';
+
 function LoginScreen() {
-    const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const loginRef = useRef(null);
     const customAlertPopupRef = useRef(null);
-
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
 
     useEffect(() => {
         if (isCustomAlertModalOpen) {
@@ -42,9 +39,7 @@ function LoginScreen() {
         event.preventDefault(); // Prevent form from submitting
 
         const form = loginRef.current;
-        console.log(form);
         const formData = new FormData(form);
-        console.log(formData);
 
         // Validate individual fields
         if (
@@ -61,9 +56,6 @@ function LoginScreen() {
         // If validation passes, submit the form
         form.submit();
     };
-
-    const date = new Date();
-    const thisYear = date.getFullYear();
 
     return (
         <div className={classes.loginPage}>
@@ -91,9 +83,7 @@ function LoginScreen() {
                                     isPassword={true}
                                     name="password"
                                 />
-
                             </form>
-
                             <ButtonDefault
                                 className="btn"
                                 buttonText={'Login'}
@@ -103,10 +93,8 @@ function LoginScreen() {
                             <div className={classes.forgotPassword}>
                                 <Link href={'/forgot-password'}>Forgot Password?</Link>
                             </div>
-                            <div className={classes.copyright}>
-                                {thisYear} © Daystar Power Solutions
-                            </div>
                         </div>
+                        <CopyRight />
                     </div>
                 </div>
             </div>

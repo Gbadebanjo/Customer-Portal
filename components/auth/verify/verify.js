@@ -8,6 +8,8 @@ import WarnCircleBigIcon from "@/components/ui/icons/WarnCircleBigIcon";
 import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
 import { ButtonDefault } from "@/components/ui/ButtonDefault/ButtonDefault";
 import CustomTextField from '@/components/ui/CustomTextField/CustomTextInput';
+import CopyRight from '@/components/ui/CopyRight/copyright';
+
 function VerifyComponent () {
     const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
     const [email, setEmail] = useState("");
@@ -96,10 +98,8 @@ function VerifyComponent () {
                             <div className={classes.forgotPassword}>
                                 <Link href={'/forgot-password'}>Resend Code</Link>
                             </div>
-                            <div className={classes.copyright}>
-                                {thisYear} © Daystar Power Solutions
-                            </div>
                         </div>
+                            <CopyRight />
                     </div>
                 </div>
             </div>

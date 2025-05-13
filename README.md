@@ -92,6 +92,77 @@
 - Make responsive
 - login  -click to show placeholder above entered text     - DONE
 
+
+New Task Breakdown
+
+Daystar year signature to component {2025 @Daystar Power Solutions} Done
+Intuitive Loading state for buttons:
+Intuitive Loading screen for Full screen
+Login authentication screen                                         Done
+Login authentication with Node mailer || authentication app
+UI Fix Login screen                                                 Done
+Forgot password screen UI                                           Done
+Forgot password API
+403 screen UI fix
+Dashboard UI Fix
+ Dashboard Bar chart fix
+ Left and Right side bar fix
+ No site UI Fix{If no site shown/ UI that shows}
+ Sidebar fix{Fix: make a component}
+ Profile Image animation fix
+ Profile Name fix
+ Profile details fix
+Site View screen back button
+ Site Name
+ Site View UI
+ Site View Calendar 
+ Site View Icons and animations
+Customer Screen UI Fix
+ Customer Data Api {Ask Godfrey where Data is from}   || Get clarification on customer screen and responsibilities
+ Crud Customer Screen
+ Pagination 
+ New customer modal UI fix
+ Upload New customer Api
+ Search query for customers
+If no details screen fix
+ Details screen UI fix
+ Actions CRUD
+ Pagination
+ Search query for support
+ New support modal fix
+ New support modal API
+ No data UI fix
+ Data fix UI
+ Pagination
+ Upload modal fix
+ Upload Api
+ Planned data CRUD
+UI Planned Vs Actual
+ Site Api
+ Date query
+UI fix
+
+
+email sending
+import users -debug
+planned data uploads
+planned vs actuals
+planned data uploads
+planned vs actuals
+custom date search
+account/manage(right side pop up)
+page drop down
+user impersonation /host urls
+permission matrix and functionality
+permissions for user roles
+Audit Logs
+Security Logs
+advanced filters
+Settings Screen
+kubernetes
+deployment
+
+
 ## Entities
 Here's a list of all the models modified in the responses from this thread:
     UserRole

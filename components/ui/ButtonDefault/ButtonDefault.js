@@ -1,15 +1,23 @@
 import classes from "./ButtonDefault.module.css";
+import ButtonLoader from "../Loader/ButtonLoader";
 
-export function ButtonDefault(props) {
+export function ButtonDefault({onClick, loading=false, buttonText}) {
     return <button
         type="submit"
         className={classes.btn}
-        onClick={props.onClick}
+        onClick={onClick}
+        disabled={loading}
     >
         <div className={ classes.btnDiv}>
-            <span>
-                    {props.buttonText ? props.buttonText : "Save"}
+            {loading ?
+            <span className={classes.btnLoading}>
+                {buttonText} <ButtonLoader /> 
             </span>
+             : 
+            <span>
+                    {buttonText ? buttonText : "Save"}
+            </span>
+            }
         </div>
     </button>;
 }

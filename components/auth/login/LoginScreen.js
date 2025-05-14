@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react'; // Import useState hook
+import { useEffect, useRef, useState, useTransition } from 'react'; // Import useState hook
 import classes from './login.module.css';
 import Link from "next/link";
 import { login } from "@/lib/auth/authActions";
@@ -13,6 +13,7 @@ import CopyRight from '@/components/ui/CopyRight/copyright';
 function LoginScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [isPending, startTransition] = useTransition();
     const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const loginRef = useRef(null);
@@ -35,26 +36,31 @@ function LoginScreen() {
         setIsCustomAlertModalOpen(false);
     };
 
-    const handlePreLogin = (event) => {
-        event.preventDefault(); // Prevent form from submitting
+    const handleLogin = (e) => {
+        e.preventDefault();
 
-        const form = loginRef.current;
-        const formData = new FormData(form);
-
-        // Validate individual fields
         if (
-            formData.get('email').length < CustomerConstants.CompanyNameMinLength ||
-            formData.get('email').length > CustomerConstants.CompanyNameMaxLength ||
-            formData.get('password').length < CustomerConstants.CompanyNameMinLength ||
-            formData.get('password').length > CustomerConstants.CompanyNameMaxLength
+            email.length < CustomerConstants.CompanyNameMinLength ||
+            email.length > CustomerConstants.CompanyNameMaxLength ||
+            password.length < CustomerConstants.CompanyNameMinLength ||
+            password.length > CustomerConstants.CompanyNameMaxLength
         ) {
-            // Handle invalid userName length
-            openCustomAlertPopup('Invalid data');
-            return null;
+            openCustomAlertPopup('Invalid credentials');
+            return;
         }
 
-        // If validation passes, submit the form
-        form.submit();
+        const formData = new FormData();
+        formData.append("email", email);
+        formData.append("password", password);
+
+        startTransition(async () => {
+            const result = await login(formData);
+            if (result?.errors) {
+                const errorMessage = result.errors.email || result.errors.password || "Login failed.";
+                openCustomAlertPopup(errorMessage);
+            }
+            // On success, redirect is handled on the server side.
+        });
     };
 
     return (
@@ -69,7 +75,7 @@ function LoginScreen() {
                                 <div className={classes.loginText}>Login</div>
                                 <div className={classes.instructionText}>Enter your e-mail address and password</div>
                             </div>
-                            <form action={login} ref={loginRef} className={classes.loginForm}>
+                            <form onSubmit={handleLogin} className={classes.loginForm}>
                                 <CustomTextField
                                     label="Email Address"
                                     value={email}
@@ -83,13 +89,13 @@ function LoginScreen() {
                                     isPassword={true}
                                     name="password"
                                 />
-                            </form>
                             <ButtonDefault
                                 className="btn"
                                 buttonText={'Login'}
                                 type="submit"
-                                onClick={handlePreLogin}
-                            />
+                                loading={isPending}
+                                />
+                                </form>
                             <div className={classes.forgotPassword}>
                                 <Link href={'/forgot-password'}>Forgot Password?</Link>
                             </div>
@@ -105,7 +111,7 @@ function LoginScreen() {
                 ref={customAlertPopupRef}
                 style={{
                     display: "flex",
-                    alignItems: "flex-start",
+                    alignItems: "center",
                     justifyContent: "center",
                 }}
             >

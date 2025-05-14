@@ -9,7 +9,7 @@ export function ButtonSaveSubmit(props) {
     >
         <div className={ classes.btnDiv}>
             <span>
-                <CheckIcon/>
+                <CheckIcon />
             </span>
             <span>
                     {props.buttonText ? props.buttonText : "Save"}

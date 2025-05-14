@@ -32,3 +32,12 @@
     letter-spacing: 0.50px;
     word-wrap: break-word;
 }
+
+.btnLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 6px;
+}

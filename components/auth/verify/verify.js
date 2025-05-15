@@ -1,27 +1,21 @@
 'use client';
-import { useEffect, useRef, useState } from 'react'; // Import useState hook
+import { useEffect, useRef, useState } from 'react';
+import { validateCode } from "@/lib/auth/verificationActions"
 import classes from '../login/login.module.css';
-import Link from "next/link";
-import { login } from "@/lib/auth/authActions";
-import { CustomerConstants } from "@/utils/constants";
+// import Link from "next/link";
 import WarnCircleBigIcon from "@/components/ui/icons/WarnCircleBigIcon";
-import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
+// import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
 import { ButtonDefault } from "@/components/ui/ButtonDefault/ButtonDefault";
 import CustomTextField from '@/components/ui/CustomTextField/CustomTextInput';
 import CopyRight from '@/components/ui/CopyRight/copyright';
 
 function VerifyComponent () {
-    const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
+    const [code, setCode] = useState("");
+    // const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
-    const loginRef = useRef(null);
     const customAlertPopupRef = useRef(null);
-
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
 
     useEffect(() => {
         if (isCustomAlertModalOpen) {
@@ -40,32 +34,15 @@ function VerifyComponent () {
         setIsCustomAlertModalOpen(false);
     };
 
-    const handlePreLogin = (event) => {
-        event.preventDefault(); // Prevent form from submitting
+   const handleVerify = (e) => {
+        e.preventDefault();
 
-        const form = loginRef.current;
-        console.log(form);
-        const formData = new FormData(form);
-        console.log(formData);
-
-        // Validate individual fields
-        if (
-            formData.get('email').length < CustomerConstants.CompanyNameMinLength ||
-            formData.get('email').length > CustomerConstants.CompanyNameMaxLength ||
-            formData.get('password').length < CustomerConstants.CompanyNameMinLength ||
-            formData.get('password').length > CustomerConstants.CompanyNameMaxLength
-        ) {
-            // Handle invalid userName length
-            openCustomAlertPopup('Invalid data');
-            return null;
+        if ( !code || code.length < 6 ) {
+            openCustomAlertPopup('Invalid code');
+            return;
         }
+    }
 
-        // If validation passes, submit the form
-        form.submit();
-    };
-
-    const date = new Date();
-    const thisYear = date.getFullYear();
 
     return (
         <div className={classes.loginPage}>
@@ -82,7 +59,7 @@ function VerifyComponent () {
                             <form action={login} ref={loginRef} className={classes.loginForm}>
                                 <CustomTextField
                                     label="Code"
-                                    value={email}
+                                    value={code}
                                     name="code"
                                     onChange={(e) => setEmail(e.target.value)}
                                 />

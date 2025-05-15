@@ -89,13 +89,13 @@ function LoginScreen() {
                                     isPassword={true}
                                     name="password"
                                 />
-                            <ButtonDefault
-                                className="btn"
-                                buttonText={'Login'}
-                                type="submit"
-                                loading={isPending}
+                                <ButtonDefault
+                                    className="btn"
+                                    buttonText={'Login'}
+                                    type="submit"
+                                    loading={isPending}
                                 />
-                                </form>
+                            </form>
                             <div className={classes.forgotPassword}>
                                 <Link href={'/forgot-password'}>Forgot Password?</Link>
                             </div>

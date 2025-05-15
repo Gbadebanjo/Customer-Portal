@@ -4,7 +4,7 @@ import { validateCode } from "@/lib/auth/verificationActions"
 import classes from '../login/login.module.css';
 // import Link from "next/link";
 import WarnCircleBigIcon from "@/components/ui/icons/WarnCircleBigIcon";
-// import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
+import { ButtonSaveSubmit } from "@/components/ui/ButtonSaveAndSubmit/ButtonSaveAndSubmit";
 import { ButtonDefault } from "@/components/ui/ButtonDefault/ButtonDefault";
 import CustomTextField from '@/components/ui/CustomTextField/CustomTextInput';
 import CopyRight from '@/components/ui/CopyRight/copyright';
@@ -18,30 +18,56 @@ function VerifyComponent () {
     const customAlertPopupRef = useRef(null);
 
     useEffect(() => {
-        if (isCustomAlertModalOpen) {
-            customAlertPopupRef.current.showModal();
+        if (isModalOpen) {
+          customAlertPopupRef.current.showModal();
         } else {
-            customAlertPopupRef.current.close();
+          customAlertPopupRef.current.close();
         }
-    }, [isCustomAlertModalOpen]);
+      }, [isModalOpen]);
 
     const openCustomAlertPopup = (msg) => {
         setAlertMessage(msg);
-        setIsCustomAlertModalOpen(true);
+        setModalOpen(true);
     };
 
     const closeCustomAlertModal = () => {
-        setIsCustomAlertModalOpen(false);
+        setModalOpen(false);
     };
 
-   const handleVerify = (e) => {
-        e.preventDefault();
+//    const handleVerify = (e) => {
+//         e.preventDefault();
 
-        if ( !code || code.length < 6 ) {
-            openCustomAlertPopup('Invalid code');
-            return;
-        }
+//         if ( !code || code.length !== 6 ) {
+//             openCustomAlertPopup('Please enter a valid 6-digit code.');
+//             return;
+//         }
+
+//         setIsSubmitting(true);
+//         const result = await validateCode(userId, code);
+//         setIsSubmitting(false);
+//     }
+
+
+const handleVerify = async (e) => {
+    e.preventDefault();
+    if (!code || code.length !== 5) {
+      openModal("Please enter a valid 5-digit code.");
+      return;
     }
+
+    setIsSubmitting(true);
+    const result = await validateCode(userId, code);
+    setIsSubmitting(false);
+
+    if (!result.success) {
+      openModal(result.message || "Verification failed.");
+    } else {
+      // Optional: redirect or update UI
+      openModal("Code verified successfully!");
+    }
+  };
+
+
 
 
     return (
@@ -56,24 +82,24 @@ function VerifyComponent () {
                                 <div className={classes.loginText}>Verify Password</div>
                                 <div className={classes.instructionText}>A verification code has been sent to <span>youremail.gmail.com</span>. Enter the code to continue </div>
                             </div>
-                            <form action={login} ref={loginRef} className={classes.loginForm}>
+                            <form onSubmit={handleVerify} className={classes.loginForm}>
                                 <CustomTextField
-                                    label="Code"
+                                    label="Verification Code"
                                     value={code}
                                     name="code"
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setCode(e.target.value)}
                                 />
 
                             </form>
 
                             <ButtonDefault
-                                className="btn"
+                                // className="btn"
                                 buttonText={'Submit'}
                                 type="submit"
-                                onClick={handlePreLogin}
+                                loading={isSubmitting}
                             />
                             <div className={classes.forgotPassword}>
-                                <Link href={'/forgot-password'}>Resend Code</Link>
+                                {/* <Link href={'/forgot-password'}>Resend Code</Link> */}
                             </div>
                         </div>
                             <CopyRight />

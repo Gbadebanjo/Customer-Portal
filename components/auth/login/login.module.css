@@ -82,6 +82,12 @@
   word-wrap: break-word;
 }
 
+.instructionBoldText {
+  color: #fff;
+  /*font-family: Kanit;*/
+  font-weight: 700;
+}
+
 .forgotPassword {
   width: 100%;
   text-align: right;

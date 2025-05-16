@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useRef, useState, useTransition } from 'react'; // Import useState hook
 import classes from './login.module.css';
-
 import Link from "next/link";
 import { login } from "@/lib/auth/authActions";
 import { CustomerConstants } from "@/utils/constants";
@@ -17,7 +16,6 @@ function LoginScreen() {
     const [isPending, startTransition] = useTransition();
     const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
-    const loginRef = useRef(null);
     const customAlertPopupRef = useRef(null);
 
     useEffect(() => {

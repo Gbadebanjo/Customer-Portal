@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { validateCode } from "@/lib/auth/verificationActions"
 import { redirect } from 'next/navigation';
 import classes from '../login/login.module.css';
@@ -16,11 +16,13 @@ function VerifyComponent() {
     // const [isCustomAlertModalOpen, setIsCustomAlertModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
+    const [verificationSuccess, setVerificationSuccess] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const customAlertPopupRef = useRef(null);
     const searchParams = useSearchParams();
     const userId = searchParams.get('id')
     const email = searchParams.get('email');
+    const router = useRouter();
 
     if (!email) {
         redirect('/login');
@@ -40,7 +42,11 @@ function VerifyComponent() {
     };
 
     const closeCustomAlertModal = () => {
-        setModalOpen(false);
+        console.log("got herererererererer")
+        if (verificationSuccess) {
+            redirect('/dashboard')
+        }
+        // setModalOpen(false);
     };
 
     //    const handleVerify = (e) => {
@@ -71,10 +77,11 @@ function VerifyComponent() {
 
         if (!result.success) {
             openCustomAlertPopup(result.message || "Verification failed.");
+            setVerificationSuccess(false);
         } else {
             // Optional: redirect or update UI
-            setTimeout(() => redirect('/dashboard'), 1500); 
             openCustomAlertPopup("Code verified successfully!");
+            setVerificationSuccess(true);
         }
     };
 
@@ -110,52 +117,52 @@ function VerifyComponent() {
                                 />
                             </form>
                             <div className={classes.forgotPassword}>
-                                {/* <button type="button" onClick={handleResendCode}>Resend Code</button>                            </div> */}
+                                <button type="button">Resend Code</button>
                             </div>
                             <CopyRight />
                         </div>
                     </div>
                 </div>
 
-                <dialog
-                    id="custom_modal"
-                    className="modal"
-                    ref={customAlertPopupRef}
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                    }}
-                >
-                    <div className="modal-box" style={{ background: '#0D202F', borderColor: '#0D202F' }}>
-                        <div className={classes.popUpHeader}></div>
-                        <div className="py-4">
-                            <form method="dialog">
-                                <div aria-labelledby="export-user-modal-tabs_0-tab" id="create-user-modal-tabs_0"
-                                    role="tabpanel">
-                                    <div>
-                                        <center>
-                                            <div><WarnCircleBigIcon /></div>
-                                            <div><h2 className="font-bold text-xl lg">{alertMessage}</h2></div>
-                                            <div>
-                                                <div className={classes.buttonContainer}>
-                                                    <div>
-                                                        <ButtonSaveSubmit
-                                                            buttonText={'Ok'}
-                                                            onClick={closeCustomAlertModal}
-                                                        />
-                                                    </div>
+            </div>
+            <dialog
+                id="custom_modal"
+                className="modal"
+                ref={customAlertPopupRef}
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}
+            >
+                <div className="modal-box" style={{ background: '#0D202F', borderColor: '#0D202F' }}>
+                    <div className={classes.popUpHeader}></div>
+                    <div className="py-4">
+                        <form >
+                            <div aria-labelledby="export-user-modal-tabs_0-tab" id="create-user-modal-tabs_0"
+                                role="tabpanel">
+                                <div>
+                                    <center>
+                                        <div><WarnCircleBigIcon /></div>
+                                        <div><h2 className="font-bold text-xl lg">{alertMessage}</h2></div>
+                                        <div>
+                                            <div className={classes.buttonContainer}>
+                                                <div>
+                                                    <ButtonSaveSubmit
+                                                        buttonText={'Ok'}
+                                                        onClick={closeCustomAlertModal}
+                                                    />
                                                 </div>
                                             </div>
-                                        </center>
-                                    </div>
+                                        </div>
+                                    </center>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
-                </dialog>
-            </div>
-        </div>
+                </div>
+            </dialog>
+        </div >
     );
 }
 
